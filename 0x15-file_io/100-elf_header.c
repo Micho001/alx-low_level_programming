@@ -34,7 +34,7 @@ void check_elf(unsigned char *e_ident)
 		    e_ident[index] != 'L' &&
 		    e_ident[index] != 'F')
 		{
-			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
+		dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 			exit(98);
 		}
 	}
@@ -111,14 +111,14 @@ void print_data(unsigned char *e_ident)
 	}
 }
 
-/**
- *  * print_version - Prints the version of an ELF header.
- *   * @e_ident: A pointer to an array containing the ELF version.
- *    */
+/*
+ * print_version - Prints the version of an ELF header.
+ * @e_ident: A pointer to an array containing the ELF version.
+*/
 void print_version(unsigned char *e_ident)
 {
 	 printf(" Version: %d",
-			  e_ident[EI_VERSION]);
+e_ident[EI_VERSION]);
 
 	switch (e_ident[EI_VERSION])
 	{
@@ -131,7 +131,7 @@ void print_version(unsigned char *e_ident)
 	}
 }
 
-/**
+/*
  * print_osabi - Prints the OS/ABI of an ELF header.
  * @e_ident: A pointer to an array containing the ELF version.
  */
@@ -312,5 +312,3 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	close_elf(o);
 	return (0);
 }
-
-
